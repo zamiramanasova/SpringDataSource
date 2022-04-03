@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01
+Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/TR/html4/loose.dtd">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Teacher</title>
+</head><body>
+<div align="center">
+    <h2>Teacher</h2>
+    <h3><a href="/teacher/new">New teacher</a></h3>
+    <table border="4" cellpadding="8" style="background-color: palegreen">
+        <tr>
+            <th>ID</th>
+            <th>Teacher name</th>
+            <th>Teacher email</th>
+            <th>Teacher lastName</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="teacher : ${teacherList}">
+            <td><a th:href="@{/teacher/teach/{id}(id=${teacher.id})}" th:text="${teacher.id}"></a></td>
+            <td th:text="${teacher.firstName}"></td>
+            <td th:text="${teacher.email}"></td>
+            <td th:text="${teacher.lastName}"></td>
+
+            <td>
+                <a th:href="@{/teacher/edit/{id}(id=${teacher.id})}">Edit</a>
+                <a th:href="@{/teacher/delete/{id}(id=${teacher.id})}">Delete</a>
+            </td>
+            <td>
+                <a href="/course/new"><button type="button" class="btn btn-warning">Course</button></a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="d-grid gap-1" style="color: dodgerblue">
+    <a href="/"><button type="button" class="btn btn-warning">Main Page</button></a>
+</div>
+</body>
+</html>

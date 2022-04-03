@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01
+Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/TR/html4/loose.dtd">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>User Manager</title>
+</head>
+<body>
+<div  align="center">
+    <th:block th:each="mess : ${messages}">
+        <h1 th:text="${mess}"></h1>
+    </th:block>
+</div>
+
+<br>
+<br>
+<div class="d-grid gap-1" style="color: dodgerblue">
+    <a href="/company"><button type="button" class="btn btn-warning">COMPANY</button></a>
+</div>
+
+<div class="d-grid gap-1" style="color: dodgerblue">
+    <a href="/course"><button type="button" class="btn btn-warning">COURSE</button></a>
+</div>
+
+<div class="d-grid gap-1" style="color: dodgerblue">
+    <a href="/teacher"><button type="button" class="btn btn-warning">TEACHER</button></a>
+</div>
+
+<div class="d-grid gap-1" style="color: dodgerblue">
+    <a href="/group"><button type="button" class="btn btn-warning">GROUP</button></a>
+</div>
+
+<div class="d-grid gap-1" style="color: dodgerblue">
+    <a href="/student"><button type="button" class="btn btn-warning">STUDENT</button></a>
+</div>
+</body>
+</html>

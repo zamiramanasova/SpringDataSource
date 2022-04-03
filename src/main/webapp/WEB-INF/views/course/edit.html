@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Edit Course</title>
+</head>
+<body background="https://images.pexels.com/photos/1031698/pexels-photo-1031698.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+<div align="center" >
+    <h2>Edit course</h2>
+    <form action="save" th:action="@{/course/update/{id}(id=${course.id})}" th:object="${course}" th:method="post">
+        <table border="5" cellpadding="10" style="background-color: cadetblue">
+            <tr>
+                <td><label for="course name">Enter course name: </label></td>
+                <td><input type="text" th:field="*{courseName}" id="course name"/></td>
+            </tr>
+            <tr>
+                <td><label for="duration">Enter duration: </label></td>
+                <td><input type="text" th:field="*{duration}" id="duration"/></td>
+            </tr>
+            <tr>
+                <td cosplan="5"><input type="submit" value="Update!"/>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+<div class="d-grid gap-1" style="color: dodgerblue">
+    <a href="/course"><button type="button" class="btn btn-warning">Back</button></a>
+</div>
+</body>
+</html>

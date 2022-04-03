@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>List Company</title>
+</head>
+
+<body>
+    <div align="center">
+        <h2>Company</h2>
+        <h3><a href="/company/new">New Company</a></h3>
+        <table border="4" cellpadding="8" style="background-color: palegreen">
+        <tr>
+            <th>ID</th>
+            <th>Company name</th>
+            <th>Company located</th>
+            <th>Action</th>
+        </tr>
+
+        <tr th:each="company : ${companyList}">
+            <td><a th:href="@{/company/comp/{id}(id=${company.id})}" th:text="${company.id}"></a></td>
+            <td th:text="${company.companyName}"></td>
+            <td th:text="${company.locatedCompany}"></td>
+            <td>
+                <a th:href="@{/company/edit/{id}(id=${company.id})}">Edit</a>
+                <a th:href="@{/company/delete/{id}(id=${company.id})}">Delete</a>
+            </td>
+        </tr>
+        </table>
+    </div>
+    <div class="d-grid gap-1" style="color: dodgerblue">
+        <a href="/"><button type="button" class="btn btn-warning">Main Page</button></a>
+    </div>
+</body>
+</html>
